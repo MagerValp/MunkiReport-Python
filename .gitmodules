@@ -1,0 +1,3 @@
+[submodule "relocatable-python"]
+	path = relocatable-python
+	url = https://github.com/gregneagle/relocatable-python.git
