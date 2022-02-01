@@ -39,7 +39,7 @@ sed -i '' '85s/os.path.exists(f)/True/' "$sppath/objc/_dyld.py"
 # Create the symlink
 echo "🔹 Creating symlink"
 mkdir -p payload/usr/local/munkireport
-ln -s /Library/MunkiReport/Python.framework/Versions/2.7/bin/python payload/usr/local/munkireport/munkireport-python
+ln -s /Library/MunkiReport/Python.framework/Versions/2.7/bin/python payload/usr/local/munkireport/munkireport-python2
 
 
 # Build the package
