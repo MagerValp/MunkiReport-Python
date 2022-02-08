@@ -5,7 +5,7 @@
     "distribution_style": true,
     "preserve_xattr": false,
     "install_location": "/",
-    "version": "5.2.7.18",
+    "version": "2.7.18",
     "ownership": "recommended",
     "identifier": "com.github.munkireport-python2"
 }
