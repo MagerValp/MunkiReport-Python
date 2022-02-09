@@ -4,12 +4,6 @@
 set -o errexit
 
 
-if ! command -v munkipkg &> /dev/null; then
-	echo "This script requires munkipkg, https://github.com/munki/munki-pkg"
-	exit 69
-fi
-
-
 rm -rf payload/*
 
 FWROOT="payload/Library/MunkiReport"
@@ -44,7 +38,7 @@ ln -s /Library/MunkiReport/Python.framework/Versions/2.7/bin/python payload/usr/
 
 # Build the package
 echo "📦 Building package"
-munkipkg .
+./munki-pkg/munkipkg .
 
 
 echo "✅ Done"

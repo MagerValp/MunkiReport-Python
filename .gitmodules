@@ -1,3 +1,6 @@
 [submodule "relocatable-python"]
 	path = relocatable-python
 	url = https://github.com/gregneagle/relocatable-python.git
+[submodule "munki-pkg"]
+	path = munki-pkg
+	url = https://github.com/munki/munki-pkg
