@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Build MunkiReport-Python2 Package
+name: Create MunkiReport-Python2 release
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
