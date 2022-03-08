@@ -40,7 +40,7 @@ ln -s /Library/MunkiReport/Python.framework/Versions/2.7/bin/python "$PKGDIR/pay
 
 # Build the package
 echo "📦 Building package"
-./munki-pkg/munkipkg Python2
+./munki-pkg/munkipkg "$PKGDIR"
 
 
 echo "✅ Done"
