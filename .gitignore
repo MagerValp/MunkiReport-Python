@@ -2,7 +2,7 @@
 .DS_Store
 
 # our build directory
-build/
-payload/
+*/build/
+*/payload/
 
 relocatable-python.log

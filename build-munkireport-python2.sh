@@ -4,9 +4,11 @@
 set -o errexit
 
 
-rm -rf payload/*
+PKGDIR="Python2"
 
-FWROOT="payload/Library/MunkiReport"
+rm -rf "$PKGDIR/payload"/*
+
+FWROOT="$PKGDIR/payload/Library/MunkiReport"
 mkdir -p "$FWROOT"
 
 # Build a relocatable Python framework
@@ -16,7 +18,7 @@ echo "Logging output to relocatable-python.log"
 	cd relocatable-python
 	./make_relocatable_python_framework.py \
 		--upgrade-pip \
-		--pip-requirements=../requirements.txt \
+		--pip-requirements=../$PKGDIR/requirements.txt \
 		--python-version 2.7.18 \
 		--destination "../$FWROOT" \
 		> ../relocatable-python.log 2>&1
@@ -32,13 +34,13 @@ sed -i '' '85s/os.path.exists(f)/True/' "$sppath/objc/_dyld.py"
 
 # Create the symlink
 echo "🔹 Creating symlink"
-mkdir -p payload/usr/local/munkireport
-ln -s /Library/MunkiReport/Python.framework/Versions/2.7/bin/python payload/usr/local/munkireport/munkireport-python2
+mkdir -p "$PKGDIR/payload/usr/local/munkireport"
+ln -s /Library/MunkiReport/Python.framework/Versions/2.7/bin/python "$PKGDIR/payload/usr/local/munkireport/munkireport-python2"
 
 
 # Build the package
 echo "📦 Building package"
-./munki-pkg/munkipkg .
+./munki-pkg/munkipkg Python2
 
 
 echo "✅ Done"
