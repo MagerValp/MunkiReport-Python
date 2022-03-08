@@ -20,7 +20,7 @@ echo "Logging output to relocatable-python.log"
 	cd relocatable-python
 	./make_relocatable_python_framework.py \
 		--upgrade-pip \
-		--pip-requirements=../$PKGDIR/requirements.txt \
+		--pip-requirements="../$PKGDIR/requirements.txt" \
 		--python-version "$version" \
 		--destination "../$FWROOT" \
 		> ../relocatable-python.log 2>&1
