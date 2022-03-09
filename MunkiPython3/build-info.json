@@ -1,0 +1,11 @@
+{
+    "postinstall_action": "none",
+    "suppress_bundle_relocation": true,
+    "name": "MunkiReportMunkiPython3-${version}.pkg",
+    "distribution_style": true,
+    "preserve_xattr": false,
+    "install_location": "/",
+    "version": "1.0",
+    "ownership": "recommended",
+    "identifier": "com.github.munkireport-munkipython3"
+}

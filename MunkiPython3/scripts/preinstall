@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+if [[ ! -x /usr/local/munki/munki-python ]]; then
+	echo "/usr/local/munki/munki-python is not executable" 1>&2
+	exit 69
+fi
+
+
+exit 0
