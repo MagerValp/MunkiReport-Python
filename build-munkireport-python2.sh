@@ -37,8 +37,12 @@ sed -i '' '85s/os.path.exists(f)/True/' "$sppath/objc/_dyld.py"
 # Create the symlink
 echo "🔹 Creating symlink"
 mkdir -p "$PKGDIR/payload/usr/local/munkireport"
-ln -s "/Library/MunkiReport/Python.framework/Versions/$ver_short/bin/python" "$PKGDIR/payload/usr/local/munkireport/munkireport-python2"
-
+LINKPATH="$PKGDIR/payload/usr/local/munkireport/munkireport-python2"
+ln -s "/Library/MunkiReport/Python.framework/Versions/$ver_short/bin/python" "$LINKPATH"
+if [[ ! -x "$LINKPATH" ]]; then
+	echo "$LINKPATH not executable" 1>&2
+	exit 70
+fi
 
 # Build the package
 echo "📦 Building package"
