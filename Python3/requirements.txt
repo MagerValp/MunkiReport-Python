@@ -1,0 +1,5 @@
+--no-binary :all:
+xattr==0.9.9
+cffi==1.15.0
+pyobjc==8.2
+six==1.16.0
