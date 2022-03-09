@@ -5,5 +5,5 @@ This repository provides packages that install Python 2 and Python 3 with PyObjC
 | Package | Status | Description |
 | --- | --- | --- |
 | `MunkiReportPython2-2.7.18.pkg` | Required for 5.x | This package is required to run MunkiReport 5.x on macOS 12.3 |
-| `MunkiReportMunkiPython3.pkg` | In Development | Install this package to use munki's included framework for Python 3 |
+| `MunkiReportMunkiPython3-1.0.pkg` | In Development | Install this package to use munki's included framework for Python 3 |
 | `MunkiReportPython3-3.x.x.pkg` | In Development | This package is only required if you run MunkiReport *without* munki |
