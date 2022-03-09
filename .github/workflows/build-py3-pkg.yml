@@ -18,7 +18,7 @@ jobs:
         submodules: recursive
     - name: Get version number
       id: version
-      run: echo "::set-output name=version::$( grep '"version"' build-info.json | cut -d\" -f4 )"
+      run: echo "::set-output name=version::$( grep '"version"' Python3/build-info.json | cut -d\" -f4 )"
     - name: Run build script
       run: ./build-munkireport-python3.sh
     - name: Create release

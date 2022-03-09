@@ -18,12 +18,12 @@ jobs:
         submodules: recursive
     - name: Get version number
       id: version
-      run: echo "::set-output name=version::$( grep '"version"' build-info.json | cut -d\" -f4 )"
+      run: echo "::set-output name=version::$( grep '"version"' MunkiPython3/build-info.json | cut -d\" -f4 )"
     - name: Run build script
       run: ./build-munkireport-munkipython3.sh
     - name: Create release
       uses: softprops/action-gh-release@v1
       with:
-        name: MunkiReport-Python3 v${{ steps.version.outputs.version }}
+        name: MunkiReport-MunkiPython3 v${{ steps.version.outputs.version }}
         tag_name: v${{ steps.version.outputs.version }}
         files: MunkiPython3/build/MunkiReportPython3-*.pkg
