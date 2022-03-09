@@ -30,13 +30,7 @@ echo "Logging output to relocatable-python.log"
 # Create the symlink
 echo "🔹 Creating symlink"
 mkdir -p "$PKGDIR/payload/usr/local/munkireport"
-LINKPATH="$PKGDIR/payload/usr/local/munkireport/munkireport-python3"
-ln -s "/Library/MunkiReport/Python.framework/Versions/$ver_short/bin/python3" "$LINKPATH"
-if [[ ! -x "$LINKPATH" ]]; then
-	echo "$LINKPATH not executable" 1>&2
-	exit 70
-fi
-
+ln -s "/Library/MunkiReport/Python.framework/Versions/$ver_short/bin/python3" "$PKGDIR/payload/usr/local/munkireport/munkireport-python3"
 
 # Build the package
 echo "📦 Building package"
