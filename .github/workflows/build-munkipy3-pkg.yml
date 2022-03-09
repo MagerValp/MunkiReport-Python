@@ -1,0 +1,29 @@
+# This is a basic workflow that is manually triggered
+
+name: Create MunkiReport-Python2 release
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+jobs:
+  buildpy2pkg:
+    runs-on: macos-11
+
+    steps:
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Get version number
+      id: version
+      run: echo "::set-output name=version::$( grep '"version"' build-info.json | cut -d\" -f4 )"
+    - name: Run build script
+      run: ./build-munkireport-munkipython3.sh
+    - name: Create release
+      uses: softprops/action-gh-release@v1
+      with:
+        name: MunkiReport-Python3 v${{ steps.version.outputs.version }}
+        tag_name: v${{ steps.version.outputs.version }}
+        files: MunkiPython3/build/MunkiReportPython3-*.pkg
